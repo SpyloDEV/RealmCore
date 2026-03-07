@@ -1,0 +1,18 @@
+homes:
+  default-max: 3
+
+teleport:
+  request-expire-seconds: 60
+
+daily:
+  cooldown-hours: 24
+  reward:
+    diamonds: 3
+    golden-apples: 2
+
+rtp:
+  cooldown-seconds: 30
+  radius: 1500
+
+starter-kit:
+  enabled: true
