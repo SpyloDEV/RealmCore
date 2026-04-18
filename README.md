@@ -1,59 +1,32 @@
 # RealmCore
 
-RealmCore is a larger modular Minecraft Paper plugin built as a portfolio project and marketplace base product.
+RealmCore is a Paper plugin that groups a typical server core feature set into one project.
+
+It covers homes, warps, teleport requests, spawn handling, daily rewards, random teleport and a small set of staff utilities. The plugin uses simple YAML storage and is aimed at single-server setups that want one central utility plugin instead of several small ones.
 
 ## Included systems
 
-- Homes with GUI
-- Warps with GUI
-- Spawn / SetSpawn
-- TPA / TPAHERE / Accept / Deny
-- Daily rewards
-- RTP with cooldown
-- Heal / Feed / Fly
-- Vanish
-- Gamemode command
-- Starter kit
-- YAML-based storage
-- Maven + GitHub-ready structure
+- homes and home GUI
+- warps and warp GUI
+- spawn and setspawn
+- teleport requests (`/tpa`, `/tpahere`, `/tpaccept`, `/tpdeny`)
+- daily rewards
+- random teleport with cooldown
+- heal, feed, fly, vanish and gamemode utilities
+- starter kit support
+- configurable messages and basic plugin config
 
-## Tech stack
+## Commands
 
-- Java 17
-- Paper API
-- Maven
-- YAML config storage
-
-## Build
-
-```bash
-mvn clean package
-```
-
-The compiled jar will be created in:
-
-```bash
-target/RealmCore.jar
-```
-
-## Suggested GitHub description
-
-Feature-rich Paper plugin with homes, warps, teleport systems, GUI menus, daily rewards and admin utilities.
-
-## Suggested topics
-
-minecraft, paper, spigot, minecraft-plugin, java, paper-plugin, spigot-plugin, minecraft-server
-
-## Command overview
-
-- `/home [name]`
-- `/sethome [name]`
-- `/warp [name]`
-- `/setwarp [name]`
-- `/spawn`
+- `/realmcore`
 - `/setspawn`
-- `/tpa <player>`
-- `/tpahere <player>`
+- `/spawn`
+- `/sethome`
+- `/home`
+- `/setwarp`
+- `/warp`
+- `/tpa`
+- `/tpahere`
 - `/tpaccept`
 - `/tpdeny`
 - `/daily`
@@ -62,17 +35,45 @@ minecraft, paper, spigot, minecraft-plugin, java, paper-plugin, spigot-plugin, m
 - `/fly`
 - `/rtp`
 - `/vanish`
-- `/gm <0|1|2|3>`
-- `/realmcore reload`
+- `/gm`
+
+## Configuration highlights
+
+The default config currently includes:
+
+- a home limit
+- teleport request expiry
+- daily reward cooldown and reward items
+- RTP cooldown and radius
+- starter kit toggle
+
+Configuration files live in:
+
+- `src/main/resources/config.yml`
+- `src/main/resources/messages.yml`
+
+## Build
+
+Requirements:
+
+- Java 17
+- Maven
+- Paper API `1.20.6-R0.1-SNAPSHOT`
+
+Build command:
+
+```bash
+mvn clean package
+```
+
+The compiled jar is written to:
+
+```bash
+target/RealmCore.jar
+```
 
 ## Notes
 
-This project was prepared as a strong starting point for a portfolio or BuiltByBit product page.  
-For a real premium release, the next best upgrades would be:
-
-- MySQL support
-- better permissions granularity
-- polish pass for GUI design
-- cooldown config expansion
-- placeholders / API hooks
-- customizable menu icons
+- storage is YAML-based
+- the plugin targets Paper rather than a multi-proxy setup
+- the repository is a good base for extending an all-in-one server utility plugin
